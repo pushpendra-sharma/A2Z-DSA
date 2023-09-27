@@ -69,3 +69,21 @@ export function pattern4(n = 5) {
 
   return pattern;
 }
+
+/**
+ *
+ * @param {number} n - The number of rows and columns in the pattern.
+ * @returns {string} - The generated pattern as a string.
+ */
+export function pattern5(n = 5) {
+  let pattern = '';
+
+  for (let i = n; i > 0; i--) {
+    for (let j = i; j > 0; j--) {
+      pattern += '* ';
+    }
+    pattern += '\n';
+  }
+
+  return pattern;
+}
