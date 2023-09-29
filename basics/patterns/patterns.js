@@ -129,3 +129,22 @@ export function pattern7(n = 5) {
 
   return pattern;
 }
+
+export function pattern8(n) {
+  let pattern = ``;
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < i; j++) {
+      pattern += ` * `;
+    }
+    for (let k = i; k < 2 * n - 1 - i; k++) {
+      pattern += ' * ';
+    }
+    for (let j = 0; j < i; j++) {
+      pattern += ` * `;
+    }
+    pattern += '\n';
+  }
+
+  return pattern;
+}
