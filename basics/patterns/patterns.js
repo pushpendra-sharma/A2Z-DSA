@@ -130,6 +130,11 @@ export function pattern7(n = 5) {
   return pattern;
 }
 
+/**
+ *
+ * @param {number} n - The number of rows and columns in the pattern.
+ * @returns {string} - The generated pattern as a string.
+ */
 export function pattern8(n) {
   let pattern = ``;
 
@@ -142,6 +147,32 @@ export function pattern8(n) {
     }
     for (let j = 0; j < i; j++) {
       pattern += ` * `;
+    }
+    pattern += '\n';
+  }
+
+  return pattern;
+}
+
+export function pattern9(n) {
+  return pattern7(n - 1) + pattern8(n - 1);
+}
+
+export function pattern10(n) {
+  return pattern2(n - 1) + pattern5(n);
+}
+
+/**
+ *
+ * @param {number} n - The number of rows and columns in the pattern.
+ * @returns {string} - The generated pattern as a string.
+ */
+export function pattern11(n) {
+  let pattern = '';
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j <= i; j++) {
+      pattern += Number(!((i + j) % 2));
     }
     pattern += '\n';
   }
