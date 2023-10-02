@@ -179,3 +179,51 @@ export function pattern11(n) {
 
   return pattern;
 }
+
+/**
+ *
+ * @param {number} n - The number of rows and columns in the pattern.
+ * @returns {string} - The generated pattern as a string.
+ */
+export function pattern12(n = 5) {
+  let pattern = '';
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j <= i; j++) {
+      pattern += Number(!((i + j) % 2));
+    }
+    pattern += '\n';
+  }
+
+  return pattern;
+}
+
+export function pattern13(n) {
+  let pattern = '';
+  let count = 0;
+  for (let i = 0; i <= n; i++) {
+    for (let j = 0; j < i; j++) {
+      count++;
+      pattern += ` ${count} `;
+    }
+    pattern += '\n';
+  }
+
+  return pattern;
+}
+
+export function pattern14(n) {
+  let pattern = '';
+  let ascii = 65;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j <= i; j++) {
+      const character = String.fromCharCode(ascii);
+      pattern += ` ${character} `;
+      ascii++;
+    }
+    ascii = 65;
+    pattern += '\n';
+  }
+
+  return pattern;
+}
